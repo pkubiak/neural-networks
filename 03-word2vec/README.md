@@ -44,12 +44,13 @@ def sample(corpus, window_size):
 
 Przeprowadziłem testy, eksperymentując z parametrami modelu, poniżej przedstawiam wyniki:
 
-| lp | maks. gensim | maks. acc. | nr epoki | optimizer | embedding size | window size | szczegóły | uwagi |
-| 1 | 2076 | 16.92% | 36 | AdamOptimizer(0.01) | 50 | 5 | rzadkie słowa usunięte z korpusu | - |
-| 2 | 2316 | 18.88% | 7 | AdamOptimizer(0.001) | 60 | 8 | rzadkie słowa zastąpione symbolem unk | - |
-| 3 | 382 | 3.11% | 52 | AdamOptimizer(0.001) | 50 | 5 | rzadkie słowa zastąpione symbolem unk | model się nie uczył -> rosnący loss |
-| 4 | 2315 | 18.87% | 16 | AdamOptimizer(0.001) | 50 | 5 | rzadkie słowa zastąpione symbolem unk | model był za słaby i od 6 epoki praktycznie się nie uczył |
-| 5 | 2402 | 19.58% | 41 | AdamOptimizer with exponential decay (start=0.005, 0.82/20000) | 50 | 5 | rzadkie słowa zastąpione symbolem unk | - |
+lp | maks. gensim | maks. acc. | nr epoki | optimizer | embedding size | window size | szczegóły | uwagi
+---|--------------|------------|----------|-----------|----------------|-------------|-----------|-------
+1 | 2076 | 16.92% | 36 | AdamOptimizer(0.01) | 50 | 5 | rzadkie słowa usunięte z korpusu | -
+2 | 2316 | 18.88% | 7 | AdamOptimizer(0.001) | 60 | 8 | rzadkie słowa zastąpione symbolem unk | -
+3 | 382 | 3.11% | 52 | AdamOptimizer(0.001) | 50 | 5 | rzadkie słowa zastąpione symbolem unk | model się nie uczył -> rosnący loss
+4 | 2315 | 18.87% | 16 | AdamOptimizer(0.001) | 50 | 5 | rzadkie słowa zastąpione symbolem unk | model był za słaby i od 6 epoki praktycznie się nie uczył
+5 | 2402 | 19.58% | 41 | AdamOptimizer with exponential decay (start=0.005, 0.82/20000) | 50 | 5 | rzadkie słowa zastąpione symbolem unk | - 
 
 ![Wizualizacja top400](word2vec.png)
 *Wizaulizacja 400 najczęstszych słów*
